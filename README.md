@@ -100,7 +100,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 
 # Tasks and questions
 
-Please answer the following questions and send your final log file here: https://forms.gle/bK3xYACVTJ7LoWXN9.
+Please answer the following questions and send your final log file here: https://forms.gle/6SM7cu4cYhNsRvqX8.
 
 ## Task 1: design the application architecture and protocols
 
