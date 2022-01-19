@@ -121,21 +121,21 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #        | Topic                                                                               |
 | -------- | ----------------------------------------------------------------------------------- |
 | Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**? |
-|          | _Enter your response here..._                                                       |
+|          | Avec l'instruction `JSON.stringify()`                                                      |
 | Question | What is **npm**?                                                                    |
-|          | _Enter your response here..._                                                       |
+|          | NPM (Node package manager) est un gestionnaire de paquets utilisé pour l'environnement `NodeJS`                                                       |
 | Question | What is the `npm install` command and what is the purpose of the `--save` flag?     |
-|          | _Enter your response here..._                                                       |
+|          | La commande `npm install` permet d'installer une dépendance spécifique ou toutes les dépendances présentes dans le fichier `package.json`. Le flag `--save` est aujourd'hui utilisé par défaut et il permet d'ajouter la dépendance dans le fichier `package.json`                                                       |
 | Question | How can we use the `https://www.npmjs.com/` web site?                               |
-|          | _Enter your response here..._                                                       |
+|          | Le site web `npmjs.com` est une gallerie permetant de faire des recherches de paquets publiés par la communauté. Lorsque l'on cherche un paquet, on obtient alors la commande `npm install <nom paquet>` permettant de l'installer               |
 | Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122?               |
-|          | _Enter your response here..._                                                       |
+|          | En utilisant le package [uuid](https://www.npmjs.com/package/uuid)                            disponible sur le site `npmjs`                            |
 | Question | In Node.js, how can we execute a function on a **periodic** basis?                  |
-|          | _Enter your response here..._                                                       |
+|          | En utilisant la fonction `setInterval()`                                                       |
 | Question | In Node.js, how can we **emit UDP datagrams**?                                      |
-|          | _Enter your response here..._                                                       |
+|          | En utilisant la librairie `dgram` qui est un module implémentant les sockets UDP                                                       |
 | Question | In Node.js, how can we **access the command line arguments**?                       |
-|          | _Enter your response here..._                                                       |
+|          | En utilisant la propriété `process.argv` qui retourne un tableau contenant les arguments passés par la ligne de commande                                                       |
 
 ## Task 3: package the "musician" app in a Docker image
 
