@@ -5,6 +5,11 @@
 - **You can work in groups of 2 students**.
 - It is up to you if you want to fork this repo, or if you prefer to work in a private repo. However, you have to **use exactly the same directory structure for the validation procedure to work**.
 - We expect that you will have more issues and questions than with other labs (because we have a left some questions open on purpose). Please ask your questions on Teams, so that everyone in the class can benefit from the discussion.
+- - **You can work in groups of 2 students**.
+
+* It is up to you if you want to fork this repo, or if you prefer to work in a private repo. However, you have to **use exactly the same directory structure for the validation procedure to work**.
+* We expect that you will have more issues and questions than with other labs (because we have a left some questions open on purpose). Please ask your questions on Teams, so that everyone in the class can benefit from the discussion.
+* ⚠️ You will have to send your GitHub URL, answer the questions and send the output log of the `validate.sh` script, which prove that your project is working [in this Google Form](https://forms.gle/6SM7cu4cYhNsRvqX8).
 
 ## Objectives
 
@@ -98,18 +103,18 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 
 ## Task 1: design the application architecture and protocols
 
-| #        | Topic                                                                                                                                                                   |
-| -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Question | How can we represent the system in an **architecture diagram**, which gives information both about the Docker containers, the communication protocols and the commands? |
-|          | _Insert your diagram here..._                                                                                                                                           |
-| Question | Who is going to **send UDP datagrams** and **when**?                                                                                                                    |
-|          | Les musiciens envoient des paquets UDP en multicast toutes les secondes lorsqu'ils jouent de leur instrument.                                                           |
-| Question | Who is going to **listen for UDP datagrams** and what should happen when a datagram is received?                                                                        |
-|          | L'auditer va écouter le trafic UDP et recevoir les paquets multicast envoyés par les musiciens. Lorsqu'il les reçoit, il les affiche sur sa sortie.                     |
-| Question | What **payload** should we put in the UDP datagrams?                                                                                                                    |
-|          | Les paquets contiennent un objet JSON avec différentes propriétés. Dans le cas des musiciens, leur ID unique et le son produit par leur instrument.                     |
-| Question | What **data structures** do we need in the UDP sender and receiver? When will we update these data structures? When will we query these data structures?                |
-|          | _Enter your response here..._                                                                                                                                           |
+| #        | Topic                                                                                                                                                                                                                                                                                                                                              |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Question | How can we represent the system in an **architecture diagram**, which gives information both about the Docker containers, the communication protocols and the commands?                                                                                                                                                                            |
+|          | _Insert your diagram here..._                                                                                                                                                                                                                                                                                                                      |
+| Question | Who is going to **send UDP datagrams** and **when**?                                                                                                                                                                                                                                                                                               |
+|          | Les musiciens envoient des paquets UDP en multicast toutes les secondes lorsqu'ils jouent de leur instrument.                                                                                                                                                                                                                                      |
+| Question | Who is going to **listen for UDP datagrams** and what should happen when a datagram is received?                                                                                                                                                                                                                                                   |
+|          | L'auditer va écouter le trafic UDP et recevoir les paquets multicast envoyés par les musiciens. Lorsqu'il les reçoit, il les affiche sur sa sortie.                                                                                                                                                                                                |
+| Question | What **payload** should we put in the UDP datagrams?                                                                                                                                                                                                                                                                                               |
+|          | Les paquets contiennent un objet JSON avec différentes propriétés. Dans le cas des musiciens, leur ID unique et le son produit par leur instrument.                                                                                                                                                                                                |
+| Question | What **data structures** do we need in the UDP sender and receiver? When will we update these data structures? When will we query these data structures?                                                                                                                                                                                           |
+|          | Les musiciens contiennent une table de hachage contenant tous les instruments ainsi que leur son. Les auditeurs contiennent cette même table de hachage, ainsi qu'une deuxième qui contient la liste des musiciens ayant été entendus, donc leur UUID, leur horodatage de première activité et l'instrument joué (déterminé par traduction du son) |
 
 ## Task 2: implement a "musician" Node.js application
 
