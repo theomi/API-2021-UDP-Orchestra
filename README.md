@@ -98,6 +98,9 @@ $ docker run -d res/musician drum
 ```
 When you connect to the TCP interface of the **Auditor**, you should receive an array of musicians that corresponds to your commands. You should also use `tcpdump` to monitor the UDP trafic in your system.
 
+# Tasks and questions
+
+Please answer the following questions and send your final log file here: https://forms.gle/bK3xYACVTJ7LoWXN9.
 
 ## Task 1: design the application architecture and protocols
 
