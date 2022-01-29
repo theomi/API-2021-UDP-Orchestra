@@ -2,14 +2,10 @@
 
 ## Admin
 
-- **You can work in groups of 2 students**.
-- It is up to you if you want to fork this repo, or if you prefer to work in a private repo. However, you have to **use exactly the same directory structure for the validation procedure to work**.
-- We expect that you will have more issues and questions than with other labs (because we have a left some questions open on purpose). Please ask your questions on Teams, so that everyone in the class can benefit from the discussion.
-- **You can work in groups of 2 students**.
-
+* **You can work in groups of 2 students**.
 * It is up to you if you want to fork this repo, or if you prefer to work in a private repo. However, you have to **use exactly the same directory structure for the validation procedure to work**.
 * We expect that you will have more issues and questions than with other labs (because we have a left some questions open on purpose). Please ask your questions on Teams, so that everyone in the class can benefit from the discussion.
-- ⚠️ You will have to send your GitHub URL, answer the questions and send the output log of the `validate.sh` script, which prove that your project is working [in this Google Form](https://forms.gle/6SM7cu4cYhNsRvqX8).
+* ⚠️ You will have to send your GitHub URL, answer the questions and send the output log of the `validate.sh` script, which prove that your project is working [in this Google Form](https://forms.gle/6SM7cu4cYhNsRvqX8).
 
 ## Objectives
 
@@ -17,8 +13,6 @@ This lab has 4 objectives:
 
 - The first objective is to **design and implement a simple application protocol on top of UDP**. It will be very similar to the protocol presented during the lecture (where thermometers were publishing temperature events in a multicast group and where a station was listening for these events).
   
-- The second objective is to get familiar with several tools from **the JavaScript ecosystem**. You will implement two simple **Node.js** applications. You will also have to search for and use a couple of **npm modules** (i.e. third-party libraries).
-
 - The second objective is to get familiar with several tools from **the JavaScript ecosystem**. You will implement two simple **Node.js** applications. You will also have to search for and use a couple of **npm modules** (i.e. third-party libraries).
 
 - The third objective is to continue practicing with **Docker**. You will have to create 2 Docker images (they will be very similar to the images presented in class). You will then have to run multiple containers based on these images.
@@ -159,56 +153,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 |          | Avec la commande `docker stop <container>`(renseigner l'UUID du container ou son nom)                 , on arrête "proprement" le container. La commande `docker kill <container>` permet de forcer l'arrêt (va terminer abruptement le container)                                                                                                                                                                                                       |
 | Question | How can we check that our running containers are effectively sending UDP datagrams?                                                                                                                                                                                                                                                                                                                                                                      |
 |          | _Enter your response here..._                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| #        | Topic                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| -------- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------                                                                                                                                                                                                                                                                                  |
-| Question | How can we represent the system in an **architecture diagram**, which gives information both about the Docker containers, the communication protocols and the commands?                                                                                                                                                                                                                                                                                  |
-|          | _Insert your diagram here..._                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Question | Who is going to **send UDP datagrams** and **when**?                                                                                                                                                                                                                                                                                                                                                                                                     |
-|          | _Enter your response here..._                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Question | Who is going to **listen for UDP datagrams** and what should happen when a datagram is received?                                                                                                                                                                                                                                                                                                                                                         |
-|          | _Enter your response here..._                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Question | What **payload** should we put in the UDP datagrams?                                                                                                                                                                                                                                                                                                                                                                                                     |
-|          | _Enter your response here..._                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Question | What **data structures** do we need in the UDP sender and receiver? When will we update these data structures? When will we query these data structures?                                                                                                                                                                                                                                                                                                 |
-|          | _Enter your response here..._                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
-## Task 2: implement a "musician" Node.js application
-
-| #        | Topic                                                                               |
-| -------- | ----------------------------------------------------------------------------------- |
-| Question | In a JavaScript program, if we have an object, how can we **serialize it in JSON**? |
-|          | _Enter your response here..._                                                       |
-| Question | What is **npm**?                                                                    |
-|          | _Enter your response here..._                                                       |
-| Question | What is the `npm install` command and what is the purpose of the `--save` flag?     |
-|          | _Enter your response here..._                                                       |
-| Question | How can we use the `https://www.npmjs.com/` web site?                               |
-|          | _Enter your response here..._                                                       |
-| Question | In JavaScript, how can we **generate a UUID** compliant with RFC4122?               |
-|          | _Enter your response here..._                                                       |
-| Question | In Node.js, how can we execute a function on a **periodic** basis?                  |
-|          | _Enter your response here..._                                                       |
-| Question | In Node.js, how can we **emit UDP datagrams**?                                      |
-|          | _Enter your response here..._                                                       |
-| Question | In Node.js, how can we **access the command line arguments**?                       |
-|          | _Enter your response here..._                                                       |
-
-## Task 3: package the "musician" app in a Docker image
-
-| #        | Topic                                                                               |
-| -------- | ----------------------------------------------------------------------------------- |
-| Question | How do we **define and build our own Docker image**?                                |
-|          | _Enter your response here..._                                                       |
-| Question | How can we use the `ENTRYPOINT` statement in our Dockerfile?                        |
-|          | _Enter your response here..._                                                       |
-| Question | After building our Docker image, how do we use it to **run containers**?            |
-|          | _Enter your response here..._                                                       |
-| Question | How do we get the list of all **running containers**?                               |
-|          | _Enter your response here..._                                                       |
-| Question | How do we **stop/kill** one running container?                                      |
-|          | _Enter your response here..._                                                       |
-| Question | How can we check that our running containers are effectively sending UDP datagrams? |
-|          | _Enter your response here..._                                                       |
 
 ## Task 4: implement an "auditor" Node.js application
 
