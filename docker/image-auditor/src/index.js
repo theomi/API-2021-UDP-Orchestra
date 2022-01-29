@@ -35,8 +35,6 @@ server.listen(PORT, () => {
     
     const now = Date.now()
     const res = Array.from(musicians.entries()).filter(([uuid, musician]) => {
-        console.log("DELTA : ")
-        console.log(now - musician.lastActive)
         let removed = now - musician.lastActive > protocol.PROTOCOL_TIMEOUT
         if(removed) {
             musicians.delete(uuid)
