@@ -18,4 +18,6 @@ function sendSound() {
     });
 }
 
+sendSound()
+
 setInterval(sendSound, protocol.INTERVAL)
