@@ -159,10 +159,10 @@ async.parallel(startContainerFunctions, function(err, results) {
 					console.log("Scheduling a new test");
 					checkThatAuditorDetectsKilledContainer();					
 				});
-			}, 10000);			
+			}, 8000);			
 		}
 		
 		
-	}, 10000);
+	}, 5000);
 });
 
