@@ -152,7 +152,7 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | Question | How do we **stop/kill** one running container?                                                                                                                                                                                                                                                                                                                                                                                                           |
 |          | Avec la commande `docker stop <container>`(renseigner l'UUID du container ou son nom)                 , on arrête "proprement" le container. La commande `docker kill <container>` permet de forcer l'arrêt (va terminer abruptement le container)                                                                                                                                                                                                       |
 | Question | How can we check that our running containers are effectively sending UDP datagrams?                                                                                                                                                                                                                                                                                                                                                                      |
-|          | _Enter your response here..._                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|          | Il est possible de *logger* dans la console lorsqu'un container reçoit un datagramme UDP. Pour ce faire, on utilise l'événement "message", et on effectue un `console.log` de son contenu. |
 
 
 ## Task 4: implement an "auditor" Node.js application
@@ -160,22 +160,22 @@ When you connect to the TCP interface of the **Auditor**, you should receive an 
 | #        | Topic                                                                                              |
 | -------- | -------------------------------------------------------------------------------------------------- |
 | Question | With Node.js, how can we listen for UDP datagrams in a multicast group?                            |
-|          | _Enter your response here..._                                                                      |
+|          | Il faut commencer par importer le module `dgram` qui fournit une implémentation des sockets liés aux datagrammes UDP. On peut ensuite créer un nouveau socket UDP, puis le relier à un port choisi. On va ensuite rajouter le socket dans un groupe multicast, identifié par une adresse multicast. Cela permet au système de savoir sur quelle interface réseau communiquer. On peut ensuite utiliser l'evénement `message` pour spécifier les actions à effectuer lorsqu'un datagramme est reçu. |
 | Question | How can we use the `Map` built-in object introduced in ECMAScript 6 to implement a **dictionary**? |
-|          | _Enter your response here..._                                                                      |
+|          | Une `map` est une structure de données permettant de stocker des informations sous forme de paire clé-valeur. De plus, une `map` a la particularité de ne stocker qu'un seul exemplaire de chaque clé. Cela signifie que si une valeur portant une clé déjà existante est insérée, elle va remplacer la valeur existante. Dans notre cas, nous allons créer une `Map` qui stocke tous les messages reçus en utilisant l'UUID de l'émetteur comme clé, afin de ne garder que le dernier message reçu. La fonction `set()` permet d'attribuer une valeur à une clé donnée. |
 | Question | How can we use the `Moment.js` npm module to help us with **date manipulations** and formatting?   |
-|          | _Enter your response here..._                                                                      |
+|          | Pour ce labo, nous n'avons pas eu besoin de ce module car nous avons utilisé directement l'objet `Date` qui est natif à JavaScript. Plus précisément la fonction `Date.now()` qui permet d'obtenir la date courante. Cependant, l'utilisation de `Moment.js` pourrait être intéressante pour formatter les dates autrement. |
 | Question | When and how do we **get rid of inactive players**?                                                |
-|          | _Enter your response here..._                                                                      |
+|          | Dans notre cas, nous avons décidé de supprimer les joueurs inactifs de la liste lorsqu'une connexion est effectuée sur le serveur TCP. Au moment où une connexion est ouverte, nous effectuons une conversion de la `Map` en tableau, puis nous supprimons toutes les entrées dont la date de première activité est supérieure au délai de *timeout* spécifié par le protocole.|
 | Question | How do I implement a **simple TCP server** in Node.js?                                             |
-|          | _Enter your response here..._                                                                      |
+|          | À l'aide du module `net`. Il faut tout d'abord créer un serveur puis le faire écouter sur le port souhaité. On peut ensuite utiliser l'évènement "connection" pour effectuer des actions au moment où une connexion cliente est effectuée. Il faut ensuite terminer la connexion pour pouvoir libérer le *socket* pour un autre client. |
 
 ## Task 5: package the "auditor" app in a Docker image
 
 | #        | Topic                                                                                |
 | -------- | ------------------------------------------------------------------------------------ |
 | Question | How do we validate that the whole system works, once we have built our Docker image? |
-|          | _Enter your response here..._                                                        |
+|          | En utilisant le script `validate.sh` fourni, qui va démarrer une instance de l'image "validation" également fournie. Cette image va lancer les images `musician` et `auditor` et vérifier que tout fonctionne. |
 
 ## Constraints
 
